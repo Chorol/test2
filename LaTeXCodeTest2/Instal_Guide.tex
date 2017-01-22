@@ -1,0 +1,133 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%frame=tb
+\lstset{frame=none ,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\title{Version-Control-System (VCS)}
+\author{Grupp 2}
+%\date{}                                           % Activate to display a given date or no date
+
+
+%Changes
+
+%--------------------------------------------------------------------------------------------------------
+%DOCUMENT START
+%--------------------------------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+\lstset{language=Java}
+
+\section*{\"{O}versikt av v\r{a}r VCS}
+
+\begin{enumerate}
+
+\item \textbf{Git:} VCS:n som vi kommer anv\"{a}nda f\"{o}r konfigurationshantering av alla dokument (dvs. specifikationer , plan , kod , osv... ) som vi kommer beh\"{o}va skriva tillsammans. \\
+
+\item \textbf{Github:} En gratis online server som anv\"{a}nder \textit{Git} d\"{a}r alla dokumenten och alla \"{a}ndringar av dokumenten kan lagras s\r{a} att de \"{a}r tillg\"{a}ngliga till alla i gruppen. \\
+
+\item \textbf{LaTeX:} Ett programmeringsspr\r{a}k som beskriver inneh\r{a}llet av ett pdf-dokument. Vi kommer anv\"{a}nda LaTeX till att skriva v\r{a}ra textdokument f\"{o}r att allt vi skriver m\r{a}ste versionhanteras. Eftersom LaTeX \"{a}r ett programmeringsspr\r{a}k, kan LaTeX koden versionhanteras med \textit{Git} p\r{a} samma s\"{a}tt som javakoden.\\
+
+\item Extra mjukvara f\"{o}r \textbf{Eclipse:}  
+	\begin{itemize}
+	\item \textbf{EGit:} Synkronisera Eclipse projekt med \textit{Github}
+	\item \textbf{TeXlipse:} Kompilatorn f\"{o}r \textit{LaTeX} i Eclipse. 
+	\end{itemize}
+	
+\end{enumerate}
+$$ $$
+
+
+\section{Installations- och inst\"{a}llningshandledning}
+
+\subsection{Git/Github}
+\begin{enumerate}
+\item Skapa ett Github konto. \\
+\end{enumerate}
+
+\subsection{LaTeX}
+\begin{enumerate}
+\item[] {\color{red}{Viktig: Det kan ta n\r{a}gra timmar att ladda ned, installera, synkronisera och uppdatera allting.}}
+\item Installera en LaTeX distribution. Vi rekommenderar de h\"{a}r, men du f\r{a}r v\"{a}lja vilken distribution som helst.
+	\begin{itemize}
+	\item Windows: proTeXt {\color{blue}{\underline{\url{https://www.tug.org/protext/}}}}
+	\item Mac: MacTeX {\color{blue}{\underline{\url{https://www.tug.org/mactex/}}}}
+	\item Unix/GNU/Linux: TeX Live {\color{blue}{\underline{\url{https://www.tug.org/texlive/}}}} \\
+	\end{itemize}
+\item L\"{a}gg m\"{a}rke till var LaTeX installeras p\r{a} datorn eftersom Eclipse kommer beh\"{o}va veta. S\"{a}rskilt bin mappen.
+\end{enumerate}
+
+\subsection{TeXlipse}
+\begin{enumerate}
+
+\item[] Mer detaljerat: {\color{blue}{\underline{\href{http://texlipse.sourceforge.net/manual/installation.html}{texlipse.sourceforge.net}}}} \\
+
+\item \"{O}ppna Eclipse  
+
+\item Preferences $\rightarrow$ Install/Update $\rightarrow$ Available Software Sites
+	\begin{itemize}
+	\item Tryck ``Add'' knappen och l\"{a}gga till $<$ http://texlipse.sourceforge.net $>$ i ``Available Software Sites'' listan. 
+	\item Name: TeXlipse 
+	\item URL: http://texlipse.sourceforge.net
+	\end{itemize}
+
+\item Help $\rightarrow$ Install New Software
+	\begin{itemize}
+	\item Hitta TeXlipse i ``work with'' listan och installera allting.
+	\end{itemize}
+	
+\item Preferences $\rightarrow$ TeXlipse $\rightarrow$ Builder Settings
+	\begin{itemize}
+	\item St\"{a}lla in ``Bin directory''. Dvs. Ange s\"{o}kv\"{a}g till bin mappen av din LaTeX distribituion. 
+	\item F\"{o}nstret ovan skulle \"{a}ndra sig med att l\"{a}gga till s\"{o}kv\"{a}gar till de flesta av kompilatorna, men det viktigaste \"{a}r att kontrollera att det finns s\"{o}kv\"{a}gar till LaTeX och PdfLatex. 
+	\end{itemize}
+	
+\item Preferences $\rightarrow$ TeXlipse $\rightarrow$ Viewer Settings
+	\begin{itemize}
+	\item Kontrollera att det redan finns en ``default viewer''.
+	\item Standarden skulle vara den som kom med din LaTeX distribution.
+	\item Om det inte finns eller du vill anv\"{a}nda ett annat program, \"{a}ndra det h\"{a}r.
+	\end{itemize}
+
+\end{enumerate}
+
+\subsection{EGit}
+\begin{enumerate}
+\item[] Didn't finish the whole instruction thing today, but here's a good place to start:  
+{\color{blue}{\underline{\url{https://wiki.eclipse.org/EGit/User_Guide}}}}
+\end{enumerate}
+
+
+
+
+\end{document}
+
