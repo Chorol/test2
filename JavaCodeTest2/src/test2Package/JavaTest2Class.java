@@ -9,6 +9,8 @@ public class JavaTest2Class {
 		
 	}
 	
+	//CH CH CH CH CHANGES!!!! Turn and face the strange 
+	
 	public void doesItWork(){
 		System.out.println(s);
 		System.out.println(e);
